@@ -26,6 +26,7 @@ shinyServer(function(input, output) {
     
     myPropName <- renderText({
         divide<-sub(pattern="([A-Z])", x = myProp(), replacement = " \\1")
+        divide <- tolower(divide)
         upper <- paste(toupper(substring(divide, 1,1)), substring(divide, 2), sep="")
     })
     
